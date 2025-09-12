@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<title>Dog Owners' Paradise</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('{{ url_for("static", filename="dog_background.jpg") }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">-->
+        <h1>Welcome to Dog Owners' Paradise</h1>
+        <h2>Everything you need to be the best dog owner!</h2>
+        <h3>Useful Links:</h3>
+        <ul>
+            <li><a href="#">Dog Breeds</a></li>
+            <li><a href="#">Dog Food</a></li>
+            <li><a href="#">Dog Training</a></li>
+            <li><a href="#">Veterinarians</a></li>
+            <li><a href="#">Groomers</a></li>
+            <li><a href="#">Kennels</a></li>
+            <li><a href="#">Dog Care Tips</a></li>
+            <li><a href="#">Dog Adoption</a></li>
+            <li><a href="#">Our Social Media</a></li>
+        </ul>
+    </div>
+</body>
+</html>
+
+#I used some skills that I know in this assignment, if there is something that you did
+#not teach please comment it and I'll add an explanantion
