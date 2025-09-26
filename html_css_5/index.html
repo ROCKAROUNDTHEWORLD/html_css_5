@@ -3,29 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dog Owner's Paradise - Mobile Header</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+        }
+
+        .header {
+            background-color: #87ceeb;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            margin-bottom: 15px;
+        }
+
+        .logo h1 {
+            color: #2c5530;
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .paw-icon {
+            font-size: 30px;
+            color: #8b4513;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: space-around;
+            background-color: #98d8c8;
+            border-radius: 25px;
+            padding: 8px;
+            margin: 0 10px;
+        }
+
+        .nav-tab {
+            background-color: #ffffff;
+            color: #2c5530;
+            padding: 10px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            border: 2px solid #87ceeb;
+            flex: 1;
+            margin: 0 2px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .nav-tab:hover {
+            background-color: #ffb6c1;
+            color: #2c5530;
+            border-color: #ff69b4;
+        }
+
+        .nav-tab:active {
+            background-color: #ffa07a;
+        }
+
+        .nav-tab.active {
+            background-color: #ffb6c1;
+            border-color: #ff69b4;
+        }
+
+        .welcome-message {
+            background-color: #ffffff;
+            color: #2c5530;
+            padding: 10px;
+            margin: 15px 10px 0;
+            border-radius: 10px;
+            border: 2px solid #98d8c8;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .paw-icon.bounce {
+            animation: bounce 0.6s ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
-    <div class="logo">
-    <h1>
-    <span class="paw-icon" onclick="bouncePaw()">🐾</span>
-    Dog Owner's Paradise
-    </h1>
-    </div>
-    <nav class="nav-tabs">
-    <a href="#home" class="nav-tab" onclick="setActiveTab(event, 'Home')">Home</a>
-    <a href="#about" class="nav-tab" onclick="setActiveTab(event, 'About Us')">About Us</a>
-    <a href="#involved" class="nav-tab" onclick="setActiveTab(event, 'Get Involved')">Get Involved</a>
-    <a href="#more" class="nav-tab" onclick="setActiveTab(event, 'More')">More</a>
-    </nav>
-    <div class="welcome-message" id="welcomeMessage">
-    Welcome to Dog Owner's Paradise! Click a tab above to explore.
-    </div>
+        <div class="logo">
+            <h1>
+                <span class="paw-icon" onclick="bouncePaw()">🐾</span>
+                Dog Owner's Paradise
+            </h1>
+        </div>
+        
+        <nav class="nav-tabs">
+            <a href="#home" class="nav-tab" onclick="setActiveTab(event, 'Home')">Home</a>
+            <a href="#about" class="nav-tab" onclick="setActiveTab(event, 'About Us')">About Us</a>
+            <a href="#involved" class="nav-tab" onclick="setActiveTab(event, 'Get Involved')">Get Involved</a>
+            <a href="#more" class="nav-tab" onclick="setActiveTab(event, 'More')">More</a>
+        </nav>
+        
+        <div class="welcome-message" id="welcomeMessage">
+            Welcome to Dog Owner's Paradise! Click a tab above to explore.
+        </div>
     </header>
-    <script src="app.js"></script>
-</body>
+
+    <script>
+        function setActiveTab(event, tabName) {
+            event.preventDefault();
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+            
+            // Update welcome message
+            const messages = {
+                'Home': 'Welcome home! Find everything you need for your furry friend.',
+                'About Us': 'Learn about our mission to help dog owners everywhere!',
+                'Get Involved': 'Join our community and make a difference for dogs!',
+                'More': 'Discover additional resources and helpful tools.'
+            };
+            
+            document.getElementById('welcomeMessage').textContent = messages[tabName];
+        }
+        
+        function bouncePaw() {
+            const pawIcon = document.querySelector('.paw-icon');
+            pawIcon.classList.add('bounce');
+            
+            // Remove bounce class after animation
+            setTimeout(() => {
+                pawIcon.classList.remove('bounce');
+            }, 600);
+        }
+        
+        // Set Home as active by default
+        window.onload = function() {
+            document.querySelector('.nav-tab').classList.add('active');
+        };
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9855437d0037a1f1',t:'MTc1ODkxNTk0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
